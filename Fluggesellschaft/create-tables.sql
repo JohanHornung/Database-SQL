@@ -53,7 +53,7 @@ CREATE TABLE Crewmitglied (
 );
 
 
--- Flug Tabelle (abfliegen/landen)
+-- Flug Tabelle 
 DROP TABLE IF EXISTS Flüge;
 CREATE TABLE Flüge (
     Flugnummer VARCHAR(255),
