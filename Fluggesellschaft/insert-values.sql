@@ -1,16 +1,15 @@
 -- Flughafen Tabelle
-INSERT INTO Flughafen (IATACode, Namen, Stadt, Breitengrad, Längengrad, AnzahlPositionen)
-VALUES
-    ('JFK', 'John F. Kennedy International Airport', 'New York', '40.6413', '-73.7781', 150),
-    ('LHR', 'London Heathrow Airport', 'London', '51.4700', '-0.4543', 200),
-    ('CDG', 'Charles de Gaulle Airport', 'Paris', '49.0097', '2.5479', 180),
-    ('LAX', 'Los Angeles International Airport', 'Los Angeles', '33.9416', '-118.4085', 200),
-    ('DFW', 'Dallas/Fort Worth International Airport', 'Dallas', '32.8998', '-97.0403', 150),
-    ('HKG', 'Hong Kong International Airport', 'Hong Kong', '22.3080', '113.9185', 180),
-    ('SYD', 'Sydney Kingsford Smith International Airport', 'Sydney', '-33.9466', '151.1779', 150),
-    ('DXB', 'Dubai International Airport', 'Dubai', '25.2532', '55.3657', 200),
+INSERT INTO Flughafen (IATACode, Name, Stadt, Breitengrad, Längengrad, AnzahlPositionen) VALUES
     ('AMS', 'Amsterdam Airport Schiphol', 'Amsterdam', '52.3105', '4.7683', 180),
-    ('ICN', 'Incheon International Airport', 'Seoul', '37.4602', '126.4407', 150);
+    ('CDG', 'Charles de Gaulle Airport', 'Paris', '49.0097', '2.5479', 180),
+    ('DFW', 'Dallas/Fort Worth International Airport', 'Dallas', '32.8998', '-97.0403', 150),
+    ('DXB', 'Dubai International Airport', 'Dubai', '25.2532', '55.3657', 200),
+    ('HKG', 'Hong Kong International Airport', 'Hong Kong', '22.3080', '113.9185', 180),
+    ('ICN', 'Incheon International Airport', 'Seoul', '37.4602', '126.4407', 150),
+    ('JFK', 'John F. Kennedy International Airport', 'New York', '40.6413', '-73.7781', 150),
+    ('LAX', 'Los Angeles International Airport', 'Los Angeles', '33.9416', '-118.4085', 200),
+    ('LHR', 'London Heathrow Airport', 'London', '51.4700', '-0.4543', 200),
+    ('SYD', 'Sydney Kingsford Smith International Airport', 'Sydney', '-33.9466', '151.1779', 150);
 
 -- Flugzeug Tabelle
 INSERT INTO Flugzeug (Flugnummer, Flugzeugtyp, Kapazität, Flughöhe, Gewicht, VerbrauchProKnoten)
@@ -55,21 +54,22 @@ VALUES
     (1010, 'Mia', 'Garcia', '1996-02-09', 'ICN', 'DXB', 'TK456', 'Economy');
 
 
--- Flug Tabelle (abfliegen/landen)
-INSERT INTO AbfliegenLanden (Flugnummer, Startflughafen, Zielflughafen, Startzeit, Landezeit)
-VALUES
-    ('BA123', 'JFK', 'LAX', '2023-09-15 10:00:00', '2023-09-15 14:00:00'),
-    ('AA789', 'LHR', 'CDG', '2023-09-16 08:30:00', '2023-09-16 10:30:00'),
-    ('BA123', 'ICN', 'DFW', '2023-09-17 12:45:00', '2023-09-17 15:15:00'),
+-- Flüge Tabelle 
+INSERT INTO Flüge (Flugnummer, Startflughafen, Zielflughafen, Startzeit, Landezeit) VALUES
     ('AA789', 'HKG', 'SYD', '2023-09-18 15:20:00', '2023-09-18 18:30:00'),
-    ('TK456', 'AMS', 'LAX', '2023-09-19 09:15:00', '2023-09-19 11:00:00'),
-    ('BA123', 'SYD', 'ICN', '2023-09-20 07:55:00', '2023-09-20 09:30:00'),
-    ('TK456', 'DXB', 'AMS', '2023-09-21 11:10:00', '2023-09-21 12:20:00'),
-    ('SQ123', 'ICN', 'LAX', '2023-09-22 13:40:00', '2023-09-22 15:10:00'),
+    ('AA789', 'JFK', 'SYD', '2023-09-24 17:20:00', '2023-09-24 18:15:00'),
+    ('AA789', 'LHR', 'CDG', '2023-09-16 08:30:00', '2023-09-16 10:30:00'),
+    ('AF123', 'AMS', 'CDG', '2023-09-20 11:00:00', '2023-09-20 18:00:00'),
+    ('BA123', 'ICN', 'DFW', '2023-09-15 10:00:00', '2023-09-15 14:00:00'),
+    ('BA123', 'ICN', 'LHR', '2023-09-21 11:10:00', '2023-09-21 12:20:00'),
+    ('DL789', 'LAX', 'DFW', '2023-09-20 07:55:00', '2023-09-20 09:30:00'),
+    ('EK789', 'DXB', 'AMS', '2023-09-19 09:15:00', '2023-09-19 11:00:00'),
+    ('LH456', 'CDG', 'JFK', '2023-09-17 12:45:00', '2023-09-17 15:15:00'),
+    ('QF789', 'HKG', 'SYD', '2023-09-22 13:40:00', '2023-09-22 15:10:00'),
+    ('SQ123', 'LAX', 'HKG', '2023-09-16 15:00:00', '2023-09-19 19:00:00'),
     ('SQ123', 'LHR', 'AMS', '2023-09-23 16:30:00', '2023-09-23 18:00:00'),
-    ('AA789', 'JFK', 'SYD', '2023-09-24 17:20:00', '2023-09-24 18:15:00');
-
--- Flugdurchführung Tabelle (fliegen)
+    ('TK456', 'ICN', 'DXB', '2023-09-29 14:00:00', '2023-09-21 20:30:00');
+    
 INSERT INTO fliegen (Reisepassnummer, Flugnummer)
 VALUES
     (1001, 'BA123'),
