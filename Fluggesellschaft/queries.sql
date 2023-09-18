@@ -19,12 +19,12 @@ SELECT
     fl.Zielflughafen, 
     fl.Startzeit, 
     fl.Landezeit, 
-    f.Flugzeugtyp,
-    COUNT(DISTINCT P.Reisepassnummer) AS AnzahlPassagiere
+    f.Flugzeugtyp
+    
 
-FROM Flüge AS fl, fliegen f, Passagier P Flugzeug F 
-WHERE fl.Flugnummer = f.Flugnummer AND fl.Flugnummer = f.Flugnummer AND f.Reisepassnummer = P.Reisepassnummer
-AND fl.Startzeit BETWEEN '2023-09-15' AND '2023-09-20';
+FROM Flüge AS fl
+JOIN Flugzeug AS f ON fl.Flugnummer = f.Flugnummer
+WHERE fl.Startzeit BETWEEN '2023-09-15' AND '2023-09-20'
 ORDER BY fl.Startzeit
 
 -- Diese Abfrage gibt alle Crewmitglieder und ihre Rollen für einen bestimmten Flug zurück.
