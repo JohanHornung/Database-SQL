@@ -27,7 +27,7 @@ CREATE TABLE Passagier (
     Reisepassnummer INT PRIMARY KEY,
     Vorname VARCHAR(255),
     Nachname VARCHAR(255),
-    Geburtsdatum VARCHAR(10) CHECK (Geburtsdatum REGEXP '^[0-9]{4}-[0-1]{1}[0-9]{1}-[0-9]{2}$'), -- Gültiges Datumsformat (YYYY-MM-DD)
+    Geburtsdatum VARCHAR(10) CHECK (Geburtsdatum REGEXP '^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$'), -- Gültiges Datumsformat (YYYY-MM-DD)
     Startflughafen VARCHAR(255),
     Zielflughafen VARCHAR(255),
     Flugnummer VARCHAR(255),
